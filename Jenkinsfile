@@ -20,6 +20,12 @@ pipeline {
             }
         }
 
-       
+        stage('Publish Artifact') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: "${ARTIFACTORY_CREDENTIALS_ID}", usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    sh "./gradlew publish -Partifactory_user=$USER -Partifactory_password=$PASS"
+                }
+            }
+        }
     }
 }
