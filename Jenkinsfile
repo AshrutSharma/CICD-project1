@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'develop', url: 'https://github.com/your-org/even-odd-checker.git'
+                git branch: 'develop', url: 'https://github.com/AshrutSharma/CICD-project1.git'
+                git credentialsId: '50dea1ff-fcdf-4a1e-ac02-3286fef44bad', url: 'https://github.com/AshrutSharma/CICD-project1.git', branch: 'develop'
             }
         }
 
