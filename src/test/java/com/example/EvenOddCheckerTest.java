@@ -7,6 +7,8 @@ public class EvenOddCheckerTest {
     @Test
     void testIsEven() {
         assertTrue(EvenOddChecker.isEven(2));
+        assertTrue(EvenOddChecker.isEven(4));
         assertFalse(EvenOddChecker.isEven(3));
+        assertFalse(EvenOddChecker.isEven(5));
     }
 }
