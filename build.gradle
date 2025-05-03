@@ -26,12 +26,13 @@ publishing {
     }
     repositories {
         maven {
-            name = "artifactory"
-            url = uri("http://localhost:8082/artifactory/libs-release-local")
+            url = "http://localhost:8082/artifactory/libs-release-local"
+            allowInsecureProtocol = true  
             credentials {
-                username = project.findProperty("artifactory_user") ?: "admin"
-                password = project.findProperty("artifactory_password") ?: "password"
+                username = project.findProperty("artifactory_user") ?: ""
+                password = project.findProperty("artifactory_password") ?: ""
             }
         }
     }
 }
+
